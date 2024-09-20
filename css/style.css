@@ -10,11 +10,30 @@ header {
     color: #ffffff;
     padding: 10px 0;
     text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
 }
 
 main {
     padding: 20px;
     text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 footer {
@@ -27,3 +46,15 @@ footer {
     width: 100%;
 }
 
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    header, main {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+}
