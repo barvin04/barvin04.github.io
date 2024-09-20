@@ -1,60 +1,111 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #eaeaea;
 }
 
 header {
-    background: #35424a;
-    color: #ffffff;
-    padding: 10px 0;
     text-align: center;
-    margin-left: 15%;
-    margin-right: 15%;
+    padding: 20px;
+    background-color: #222;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.highlight {
+    color: #00d8ff;
 }
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 10px;
 }
 
 nav ul li a {
-    color: #ffffff;
+    color: #eaeaea;
     text-decoration: none;
 }
 
-main {
-    padding: 20px;
-    text-align: center;
-    margin-left: 15%;
-    margin-right: 15%;
+nav ul li a:hover {
+    color: #00d8ff;
 }
 
-footer {
-    background: #35424a;
-    color: #ffffff;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bio {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     width: 100%;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    header, main {
-        margin-left: 5%;
-        margin-right: 5%;
-    }
+.profile-pic img {
+    max-width: 300px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
 
-    nav ul li {
-        display: block;
-        margin: 5px 0;
-    }
+.info {
+    flex: 1;
+}
+
+.contact-info {
+    text-align: right;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+.contact-info i {
+    color: #00d8ff;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    color: #eaeaea;
+}
+
+.social-icons {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-icons li {
+    display: inline;
+}
+
+.social-icons li a {
+    color: #eaeaea;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.social-icons li a:hover {
+    color: #00d8ff;
 }
