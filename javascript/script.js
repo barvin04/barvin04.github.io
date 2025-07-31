@@ -267,15 +267,15 @@ document.addEventListener('DOMContentLoaded', function() {
     //     typeWriter(heroTitle, originalText, 100);
     // }
 
-    // Parallax effect for hero section (subtle)
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const hero = document.querySelector('.hero');
+    // Parallax effect for hero section (DISABLED - was causing overlap issues)
+    // window.addEventListener('scroll', function() {
+    //     const scrolled = window.pageYOffset;
+    //     const hero = document.querySelector('.hero');
         
-        if (hero && scrolled < hero.offsetHeight) {
-            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-        }
-    });
+    //     if (hero && scrolled < hero.offsetHeight) {
+    //         hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+    //     }
+    // });
 
     // Button click animations
     const buttons = document.querySelectorAll('.btn');
