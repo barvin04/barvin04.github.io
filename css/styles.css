@@ -172,6 +172,8 @@ p {
     align-items: center;
     padding: 80px 0 0;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    position: relative;
+    z-index: 1;
 }
 
 .hero-container {
@@ -227,6 +229,9 @@ p {
 .about {
     padding: 100px 0;
     background: #fff;
+    position: relative;
+    z-index: 2;
+    margin-top: -1px;
 }
 
 .about-content {
@@ -277,6 +282,8 @@ p {
 .projects {
     padding: 100px 0;
     background: #f8f9fa;
+    position: relative;
+    z-index: 2;
 }
 
 .projects-grid {
@@ -389,6 +396,8 @@ p {
 .skills {
     padding: 100px 0;
     background: white;
+    position: relative;
+    z-index: 2;
 }
 
 .skills-grid {
@@ -438,6 +447,8 @@ p {
 .contact {
     padding: 100px 0;
     background: #f8f9fa;
+    position: relative;
+    z-index: 2;
 }
 
 .contact-content {
