@@ -1,1 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhinaba Bala - Portfolio</title>
+    <meta name="description" content="Abhinaba's personal portfolio showcasing projects and skills">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Abhinaba Bala</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Hi, I'm <span class="highlight">Abhinaba</span></h1>
+                <p class="hero-subtitle">Data Scientist & Problem Solver</p>
+                <p class="hero-description">
+                    I create digital solutions that make a difference. 
+                    Passionate about clean code, finding patterns in data and innovative technology.
+                    Currently, I am working in Life Sciences / Drug Discovery domain.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/abhi_photo.jpeg" alt="Abhinaba's Profile Photo">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Welcome to my digital space! I'm a passionate data scientist with a love for solving 
+                        meaningful challenges end-to-end by finding patterns in data. 
+                        With expertise in Deep Learning / Machine Learning / GenAI, I enjoy 
+                        turning complex problems into simple, beautiful solutions.
+                    </p>
+                    <p>
+                        When I'm not coding, you can find me exploring new technologies, contributing to 
+                        open source projects, playing football or reading books.
+                    </p>
+                    <div class="about-stats">
+                        <!-- <div class="stat">
+                            <h3>50+</h3>
+                            <p>Projects Completed</p>
+                        </div> -->
+                        <div class="stat">
+                            <h3>5+</h3>
+                            <p>Years Academic Research Experience</p>
+                        </div>
+                        <div class="stat">
+                            <h3>1+</h3>
+                            <p>Years Industry Experience</p>
+                        </div>
+                        <!-- <div class="stat">
+                            <h3>100%</h3>
+                            <p>Client Satisfaction</p>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="images/abhi_photo_2.jpeg" alt="About Abhinaba">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/mizo_enrichment.jpeg" alt="mizo_enrichment">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>News Summarization and Enrichment</h3>
+                        <p>We study a simple method for generating holistic summaries of Mizo news by leveraging related English-language news.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">spaCy</span>
+                            <span class="tech-tag">huggingface</span>
+                            <span class="tech-tag">PyTorch</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/abhi_photo.jpeg" alt="Task Management App">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Task Management App</h3>
+                        <p>Collaborative task management tool with real-time updates and team features.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">CSS3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/abhi_photo.jpeg" alt="Data Visualization Dashboard">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Data Visualization Dashboard</h3>
+                        <p>Interactive dashboard for complex data analysis with beautiful charts and insights.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">D3.js</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+     <!-- Publications Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Publications</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/mizo_enrichment.jpeg" alt="mizo_enrichment">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>News Summarization and Enrichment</h3>
+                        <p>We study a simple method for generating holistic summaries of Mizo news by leveraging related English-language news.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">spaCy</span>
+                            <span class="tech-tag">huggingface</span>
+                            <span class="tech-tag">PyTorch</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- -->
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Machine Learning / Deep Learning (ML/DL)</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">PyTorch</span>
+                        <!-- <span class="skill-item">Tensorflow</span> -->
+                        <span class="skill-item">YOLO, MViT</span>
+                        <span class="skill-item">Open3D</span>
+                        <span class="skill-item">Transformers</span>
+                        <!-- <span class="skill-item">WandB</span> -->
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Natural Language Processing (NLP)</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">NLTK</span>
+                        <span class="skill-item">SpaCy</span>
+                        <span class="skill-item">HuggingFace</span>
+                        <!-- <span class="skill-item">Prompt Engineering & Tuning (PEFT)</span> -->
+                        <span class="skill-item">xAI (SHAP)</span>
+                    </div>
+
+                <div class="skill-category">
+                    <h3>Data Science</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Scikit-learn</span>
+                        <span class="skill-item">Pandas</span>
+                        <span class="skill-item">Numpy</span>
+                        <span class="skill-item">SweetViz</span>
+                        <span class="skill-item">Hyperparam Tuning</span>
+                        <span class="skill-item">Matplotlib</span>
+                    </div>
+                </div>
+                
+
+                <div class="skill-category">
+                    <h3>Developer Tools</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Git</span>
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">Vim, VSCode</span>
+                        <span class="skill-item">MongoDB</span>
+                        <span class="skill-item">MLFlow</span>
+                        <span class="skill-item">REST APIs (FastAPI)</span>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's work together!</h3>
+                    <p>
+                        Let's connect and collaborate!
+
+                        I'm passionate about creating impactful solutions and always open to discussing 
+                        innovative ideas with fellow professionals. Whether you'd like to share insights, 
+                        explore collaborations, or simply have a tech conversation, feel free to reach out!
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>abhinababala04@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Hyderabad, India</span>
+                        </div>
+                        <!-- <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div> -->
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/barvin04" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/abhinababala" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <!-- <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a> -->
+                    </div>
+                </div>
+
+                <!-- <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" required>
+                        <label for="subject">Subject</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Abhinaba Bala. All rights reserved.</p>
+                <!-- <p>Built with ❤️ using HTML, CSS & JavaScript</p> -->
+            </div>
+        </div>
+    </footer>
+
+    <script src="javascript/script.js"></script>
+</body>
+</html>
