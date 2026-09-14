@@ -395,3 +395,96 @@ body {
     border-top-right-radius: 16px;
   }
 }
+
+/* ====================================================
+   Desktop & Laptop Layout (Widescreen Polish)
+   ==================================================== */
+@media (min-width: 768px) {
+  body {
+    background: radial-gradient(circle at 50% 25%, #f7f3ec 0%, #ded4c3 100%);
+    padding: 3.5rem 0 5rem;
+  }
+
+  /* Expand canvas width for comfortable laptop reading */
+  .page-container {
+    max-width: 580px;
+    border-radius: 20px;
+    box-shadow: 
+      0 30px 90px rgba(44, 41, 39, 0.16),
+      0 1px 3px rgba(191, 161, 95, 0.3);
+    border: 1px solid rgba(191, 161, 95, 0.35);
+  }
+
+  .top-header {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 1.2rem 2rem;
+  }
+
+  /* Let the invitation artwork scale with proper margins */
+  .art-frame {
+    max-width: 480px;
+    border-radius: 240px 240px 20px 20px;
+  }
+
+  /* Countdown: slightly larger spacing */
+  .countdown-grid {
+    gap: 1.5rem;
+  }
+
+  .time-box {
+    min-width: 70px;
+  }
+
+  .time-val {
+    font-size: 2.8rem;
+  }
+
+  /* Venue Card polish */
+  .venue-card {
+    padding: 3.2rem 2.4rem 2.8rem;
+  }
+
+  .hall-frame {
+    max-width: 380px;
+  }
+
+  .venue-title {
+    font-size: 4rem;
+  }
+
+  /* Travel Cards: Convert from stacked pills to a balanced grid */
+  .travel-section {
+    padding: 3rem 2.2rem;
+  }
+
+  .travel-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+
+  /* Let the venue card span full width across the 2 columns */
+  .travel-card:last-child {
+    grid-column: span 2;
+  }
+
+  .travel-card {
+    padding: 1.8rem 1.4rem;
+  }
+
+  .contact-section {
+    padding: 1rem 2.2rem 3rem;
+  }
+}
+
+/* Ultra-wide screens (MacBook Pro / 1440p+) */
+@media (min-width: 1200px) {
+  .page-container {
+    max-width: 620px;
+  }
+
+  .art-frame {
+    max-width: 510px;
+  }
+}
