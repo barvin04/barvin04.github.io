@@ -1,36 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhinaba Bala</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Save The Date | Wedding Invitation</title>
 
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Montserrat:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
 
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #ffffff;
-        }
-
-        img {
-            max-width: 100%;
-            max-height: 100vh;
-            object-fit: contain;
-        }
-    </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-    <img src="file_0000000011a0820884ee2fe687cb147d.png" alt="Abhinaba Bala">
+  <audio id="bgMusic" loop src="assets/music.mp3"></audio>
 
+  <div class="mobile-frame">
+    <header class="top-nav">
+      <button id="musicToggle" class="icon-btn" aria-label="Toggle sound">♫</button>
+      <span class="nav-label">SAVE THE DATE</span>
+      <div class="spacer"></div>
+    </header>
+
+    <section class="card-stage">
+      
+      <div class="ribbon-overlay">
+        <div class="ribbon-band band-left"></div>
+        
+        <div class="ribbon-centerpiece">
+          <svg class="bow-svg" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100 60 C80 30, 20 25, 25 55 C30 80, 80 65, 100 60 Z" fill="#F4EAE1" stroke="#D8BEA5" stroke-width="1.5" />
+            <path d="M100 60 C120 30, 180 25, 175 55 C170 80, 120 65, 100 60 Z" fill="#F4EAE1" stroke="#D8BEA5" stroke-width="1.5" />
+            <path d="M96 62 C85 85, 75 110, 65 115 C75 105, 92 80, 98 64 Z" fill="#EBD8CC" opacity="0.9" />
+            <path d="M104 62 C115 85, 125 110, 135 115 C125 105, 108 80, 102 64 Z" fill="#EBD8CC" opacity="0.9" />
+            <circle cx="100" cy="60" r="11" fill="#E5CEBF" stroke="#C29D59" stroke-width="1.5" />
+          </svg>
+          <span class="scroll-hint">SCROLL TO OPEN</span>
+        </div>
+
+        <div class="ribbon-band band-right"></div>
+      </div>
+
+      <div class="invitation-card">
+        <div class="arch-frame">
+          <img src="images/savethedate.png" alt="Wedding Invitation Card" class="sketch-img" />
+        </div>
+        <p class="quote">"Two lives, one shared journey."</p>
+      </div>
+
+    </section>
+
+    <section class="section-countdown">
+      <p class="subtitle">COUNTING DOWN THE DAYS</p>
+      <div class="counter-grid">
+        <div class="unit"><span id="days">00</span><label>Days</label></div>
+        <div class="unit"><span id="hours">00</span><label>Hours</label></div>
+        <div class="unit"><span id="minutes">00</span><label>Mins</label></div>
+        <div class="unit"><span id="seconds">00</span><label>Secs</label></div>
+      </div>
+    </section>
+
+    <section class="section-venue">
+      <div class="gold-box">
+        <p class="subtitle">THE DESTINATION</p>
+        <h2 class="venue-name">Dayal Vatika</h2>
+        <p class="venue-address">Ratlam, Madhya Pradesh</p>
+        <a href="http://googleusercontent.com/maps.google.com/3" target="_blank" class="map-link">View Location</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Celebration details will follow shortly.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
