@@ -251,6 +251,104 @@ body {
   color: #ffffff;
 }
 
+/* Travel & Connectivity */
+.travel-section {
+  padding: 2.5rem 1.4rem;
+  text-align: center;
+}
+
+.travel-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.12em;
+  margin-bottom: 1.5rem;
+  color: var(--charcoal);
+  font-weight: 400;
+}
+
+.travel-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.travel-card {
+  background: var(--card-white);
+  border: 1px solid var(--gold-border);
+  padding: 1.6rem 1.2rem;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.travel-icon {
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.travel-mode {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.3rem;
+}
+
+.travel-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 0.5rem;
+}
+
+.travel-desc {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Contact / Assistance */
+.contact-section {
+  padding: 1rem 1.4rem 2rem;
+}
+
+.contact-box {
+  background: rgba(191, 161, 95, 0.08);
+  border: 1px dashed var(--gold);
+  padding: 1.8rem 1.2rem;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.contact-sub {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+}
+
+.contact-btn {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  background: #ffffff;
+  border: 1px solid var(--gold);
+  padding: 0.75rem 1.6rem;
+  text-decoration: none;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: var(--gold);
+  color: #ffffff;
+}
+
 /* Corner Accents */
 .corner-filigree {
   position: absolute;
