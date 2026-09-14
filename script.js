@@ -1,13 +1,16 @@
-// 1. Live Countdown
+/* ====================================================
+   1. Real-Time Wedding Countdown Timer
+   Target: January 25, 2027 at 10:00 AM IST
+   ==================================================== */
 const TARGET_DATE = new Date("January 25, 2027 10:00:00").getTime();
 
-function updateCountdown() {
+function refreshCountdown() {
   const now = new Date().getTime();
   const diff = TARGET_DATE - now;
 
   if (diff <= 0) {
-    const countdownEl = document.querySelector(".section-countdown");
-    if (countdownEl) countdownEl.style.display = "none";
+    const timerSection = document.querySelector(".section-timer");
+    if (timerSection) timerSection.style.display = "none";
     return;
   }
 
@@ -16,43 +19,43 @@ function updateCountdown() {
   const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
   const s = Math.floor((diff % (1000 * 60)) / 1000);
 
-  document.getElementById("days").innerText = String(d).padStart(2, '0');
-  document.getElementById("hours").innerText = String(h).padStart(2, '0');
-  document.getElementById("minutes").innerText = String(m).padStart(2, '0');
-  document.getElementById("seconds").innerText = String(s).padStart(2, '0');
+  const daysEl = document.getElementById("days");
+  const hoursEl = document.getElementById("hours");
+  const minsEl = document.getElementById("minutes");
+  const secsEl = document.getElementById("seconds");
+
+  if (daysEl) daysEl.innerText = String(d).padStart(2, '0');
+  if (hoursEl) hoursEl.innerText = String(h).padStart(2, '0');
+  if (minsEl) minsEl.innerText = String(m).padStart(2, '0');
+  if (secsEl) secsEl.innerText = String(s).padStart(2, '0');
 }
 
-setInterval(updateCountdown, 1000);
-updateCountdown();
+setInterval(refreshCountdown, 1000);
+refreshCountdown();
 
-// 2. Audio Control
-const audio = document.getElementById("bgMusic");
-const musicBtn = document.getElementById("musicToggle");
+/* ====================================================
+   2. Interactive Silk Curtain Parting on Scroll
+   Gracefully opens on scroll down, closes in reverse
+   ==================================================== */
+const curtainLeft = document.getElementById("curtainLeft");
+const curtainRight = document.getElementById("curtainRight");
+const scrollPrompt = document.getElementById("scrollPrompt");
 
-musicBtn.addEventListener("click", () => {
-  if (audio.paused) {
-    audio.play();
-    musicBtn.textContent = "❙❙";
-  } else {
-    audio.pause();
-    musicBtn.textContent = "♫";
-  }
-});
-
-// 3. Ribbon & Bow Scrub Animation (Scrolls Open & Closes in Reverse)
-const bandLeft = document.querySelector(".band-left");
-const bandRight = document.querySelector(".band-right");
-const centerpiece = document.querySelector(".ribbon-centerpiece");
-
-window.addEventListener("scroll", () => {
+function scrubCurtains() {
   const scrollY = window.scrollY;
-  // Completes the untying effect over 220px of scrolling
-  const progress = Math.min(scrollY / 220, 1);
+  // Curtains complete full open over 280px of scroll
+  const progress = Math.min(scrollY / 280, 1);
 
-  if (bandLeft && bandRight && centerpiece) {
-    bandLeft.style.transform = `translateX(-${progress * 110}%)`;
-    bandRight.style.transform = `translateX(${progress * 110}%)`;
-    centerpiece.style.transform = `scale(${1 + progress * 0.15})`;
-    centerpiece.style.opacity = `${1 - progress * 1.3}`;
+  if (curtainLeft && curtainRight) {
+    curtainLeft.style.transform = `translateX(-${progress * 105}%)`;
+    curtainRight.style.transform = `translateX(${progress * 105}%)`;
   }
-});
+
+  if (scrollPrompt) {
+    scrollPrompt.style.opacity = `${Math.max(1 - progress * 2.5, 0)}`;
+    scrollPrompt.style.transform = `translate(-50%, -50%) scale(${1 - progress * 0.2})`;
+  }
+}
+
+window.addEventListener("scroll", scrubCurtains, { passive: true });
+scrubCurtains();
