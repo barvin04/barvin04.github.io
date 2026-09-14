@@ -1,7 +1,4 @@
-/* ====================================================
-   1. Real-Time Wedding Countdown Timer
-   Target: January 25, 2027 at 10:00 AM IST
-   ==================================================== */
+/* script.js */
 const TARGET_DATE = new Date("January 25, 2027 10:00:00").getTime();
 
 function refreshCountdown() {
@@ -9,7 +6,7 @@ function refreshCountdown() {
   const diff = TARGET_DATE - now;
 
   if (diff <= 0) {
-    const timerSection = document.querySelector(".section-timer");
+    const timerSection = document.querySelector(".timer-section");
     if (timerSection) timerSection.style.display = "none";
     return;
   }
@@ -34,28 +31,36 @@ setInterval(refreshCountdown, 1000);
 refreshCountdown();
 
 /* ====================================================
-   2. Interactive Silk Curtain Parting on Scroll
-   Gracefully opens on scroll down, closes in reverse
+   Background Audio Controller
    ==================================================== */
-const curtainLeft = document.getElementById("curtainLeft");
-const curtainRight = document.getElementById("curtainRight");
-const scrollPrompt = document.getElementById("scrollPrompt");
+const bgAudio = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicToggle");
+const musicIcon = document.getElementById("musicIcon");
 
-function scrubCurtains() {
-  const scrollY = window.scrollY;
-  // Curtains complete full open over 280px of scroll
-  const progress = Math.min(scrollY / 280, 1);
+if (musicBtn && bgAudio) {
+  musicBtn.addEventListener("click", () => {
+    if (bgAudio.paused) {
+      bgAudio.play().then(() => {
+        musicIcon.textContent = "❙❙";
+        musicBtn.classList.add("playing");
+      }).catch(err => {
+        console.log("Playback interaction required:", err);
+      });
+    } else {
+      bgAudio.pause();
+      musicIcon.textContent = "♫";
+      musicBtn.classList.remove("playing");
+    }
+  });
 
-  if (curtainLeft && curtainRight) {
-    curtainLeft.style.transform = `translateX(-${progress * 105}%)`;
-    curtainRight.style.transform = `translateX(${progress * 105}%)`;
-  }
-
-  if (scrollPrompt) {
-    scrollPrompt.style.opacity = `${Math.max(1 - progress * 2.5, 0)}`;
-    scrollPrompt.style.transform = `translate(-50%, -50%) scale(${1 - progress * 0.2})`;
-  }
+  const autoPlayOnce = () => {
+    if (bgAudio.paused) {
+      bgAudio.play().then(() => {
+        musicIcon.textContent = "❙❙";
+        musicBtn.classList.add("playing");
+      }).catch(() => {});
+    }
+    window.removeEventListener("pointerdown", autoPlayOnce);
+  };
+  window.addEventListener("pointerdown", autoPlayOnce, { once: true });
 }
-
-window.addEventListener("scroll", scrubCurtains, { passive: true });
-scrubCurtains();

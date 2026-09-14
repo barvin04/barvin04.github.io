@@ -1,11 +1,11 @@
+/* style.css */
 :root {
-  --canvas-bg: #faf6f0;
-  --card-bg: #ffffff;
+  --bg-cream: #faf6f0;
+  --card-white: #ffffff;
   --gold: #bfa15f;
-  --gold-subtle: rgba(191, 161, 95, 0.35);
-  --charcoal: #2c2927;
-  --muted: #7d7771;
-  --curtain-tone: #e8d0cb;
+  --gold-border: rgba(191, 161, 95, 0.35);
+  --charcoal: #2b2725;
+  --muted: #78726d;
 }
 
 * {
@@ -24,152 +24,206 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Full-bleed Canvas Container */
+/* Page Frame Container */
 .page-container {
   width: 100%;
   max-width: 440px;
-  background-color: var(--canvas-bg);
-  background-image: radial-gradient(#ebe1d3 0.8px, transparent 0.8px);
-  background-size: 16px 16px;
+  background-color: var(--bg-cream);
   min-height: 100vh;
   position: relative;
-  overflow-x: hidden;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.08);
+  overflow-x: hidden;
 }
 
-/* Luxury Nav */
-.luxury-nav {
+/* Header & Audio Controller */
+.top-header {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 20;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 1.1rem 1.4rem;
-  background: linear-gradient(to bottom, rgba(250, 246, 240, 0.98) 60%, rgba(250, 246, 240, 0));
+  padding: 0.9rem 1.25rem;
+  background: linear-gradient(to bottom, rgba(250, 246, 240, 0.98), rgba(250, 246, 240, 0));
 }
 
-.nav-caption {
+.music-toggle-btn {
+  background: #ffffff;
+  border: 1px solid var(--gold-border);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.music-toggle-btn:hover {
+  border-color: var(--gold);
+  transform: scale(1.05);
+}
+
+.music-icon {
+  font-size: 0.85rem;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.music-toggle-btn.playing {
+  border-color: var(--gold);
+  animation: gentlePulse 2.5s infinite ease-in-out;
+}
+
+@keyframes gentlePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(191, 161, 95, 0.25); }
+  50% { box-shadow: 0 0 0 6px rgba(191, 161, 95, 0); }
+}
+
+.header-tag {
   font-family: 'Cinzel', serif;
   font-size: 0.65rem;
   letter-spacing: 0.32em;
   color: var(--gold);
 }
 
-/* SECTION 1: Grand Curtain Reveal Stage */
-.curtain-stage {
-  position: relative;
-  min-height: 85vh;
-  padding: 0.5rem 1.25rem 2.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
+.header-spacer {
+  width: 32px;
 }
 
-/* Satin Silk Drapery System */
-.curtain-rig {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 40;
-  display: flex;
-}
-
-.curtain-wing {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 50.5%;
-  height: 100%;
-  display: flex;
-  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.08);
-  will-change: transform;
-}
-
-/* Left Curtain & Silk Pleats */
-.wing-left {
-  left: 0;
-  background: linear-gradient(to right, #cfaba3 0%, #ecd4cf 40%, #f6e6e2 80%, #ebd3ce 100%);
-  border-right: 1px solid rgba(191, 161, 95, 0.4);
-  box-shadow: 6px 0 20px rgba(60, 30, 25, 0.12);
-}
-
-/* Right Curtain & Silk Pleats */
-.wing-right {
-  right: 0;
-  background: linear-gradient(to left, #cfaba3 0%, #ecd4cf 40%, #f6e6e2 80%, #ebd3ce 100%);
-  border-left: 1px solid rgba(191, 161, 95, 0.4);
-  box-shadow: -6px 0 20px rgba(60, 30, 25, 0.12);
-}
-
-.pleat {
-  flex: 1;
-  height: 100%;
-  background: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.06) 50%, rgba(255,255,255,0.1) 100%);
-}
-
-.scroll-prompt {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 45;
-  will-change: opacity, transform;
-}
-
-.scroll-prompt span {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.52rem;
-  letter-spacing: 0.28em;
-  color: var(--charcoal);
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid var(--gold);
-  border-radius: 20px;
-  padding: 5px 14px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  white-space: nowrap;
-}
-
-/* Revealed Content Structure */
-.revealed-invitation {
-  width: 100%;
+/* Card Section */
+.card-section {
+  padding: 0.5rem 1.4rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  z-index: 10;
 }
 
-.family-honor {
+.art-frame {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 190px 190px 16px 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(191, 161, 95, 0.16);
+  border: 1px solid rgba(191, 161, 95, 0.3);
+  background: var(--card-white);
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.quote {
   font-style: italic;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: var(--muted);
-  margin-bottom: 0.4rem;
+  margin-top: 1.6rem;
 }
 
-.couple-title {
+/* Timer Section */
+.timer-section {
+  padding: 3rem 1.5rem 2.5rem;
+  text-align: center;
+}
+
+.section-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.58rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+.countdown-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.time-box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0.2rem 0 0.8rem;
+  min-width: 55px;
 }
 
-.couple-title .name {
-  font-family: 'Cinzel', serif;
-  font-size: 2.15rem;
+.time-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.3rem;
+  line-height: 1;
+  color: var(--charcoal);
+  border-bottom: 1.5px solid var(--gold);
+  padding-bottom: 0.3rem;
+  width: 100%;
+}
+
+.time-lbl {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  margin-top: 0.45rem;
+}
+
+.time-sep {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  color: var(--gold);
+  margin-top: -1.1rem;
+}
+
+/* Venue Section */
+.venue-section {
+  padding: 2rem 1.4rem;
+}
+
+.venue-card {
+  position: relative;
+  background: var(--card-white);
+  border: 1px solid var(--gold-border);
+  padding: 2.6rem 1.4rem 2.2rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.hall-frame {
+  width: 100%;
+  max-width: 300px;
+  margin: 1.2rem auto 1.4rem;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.hall-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.venue-title {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 3.4rem;
   font-weight: 400;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--charcoal);
   line-height: 1.1;
+  margin-bottom: 0.2rem;
 }
 
-.couple-title .ampersand {
-  font-family: 'Alex Brush', cursive;
-  font-size: 2.3rem;
-  color: var(--gold);
-  margin: -0.25rem 0;
+.venue-location {
+  font-size: 1rem;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
 }
 
 .event-dates {
@@ -177,154 +231,28 @@ body {
   font-size: 0.72rem;
   letter-spacing: 0.24em;
   color: var(--gold);
-  margin-bottom: 1.6rem;
-}
-
-/* Archway Invitation Card */
-.artwork-arch {
-  width: 90%;
-  max-width: 360px;
-  border-radius: 190px 190px 14px 14px;
-  overflow: hidden;
-  box-shadow: 0 15px 40px rgba(191, 161, 95, 0.18);
-  border: 1px solid rgba(191, 161, 95, 0.25);
-  background: #ffffff;
-}
-
-.invitation-art {
-  width: 100%;
-  display: block;
-}
-
-.wedding-quote {
-  font-style: italic;
-  font-size: 1.15rem;
-  color: var(--muted);
-  margin-top: 1.8rem;
-}
-
-/* SECTION 2: Countdown Timer */
-.section-timer {
-  padding: 3.5rem 1.5rem 2.5rem;
-  text-align: center;
-}
-
-.eyebrow {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.58rem;
-  font-weight: 300;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 0.6rem;
-}
-
-.timer-display {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.6rem;
-  margin-top: 1.2rem;
-}
-
-.time-cell {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 58px;
-}
-
-.time-cell .num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.4rem;
-  line-height: 1;
-  font-weight: 400;
-  color: var(--charcoal);
-  border-bottom: 1.5px solid var(--gold);
-  padding-bottom: 0.3rem;
-  width: 100%;
-}
-
-.time-cell .lbl {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.5rem;
-  letter-spacing: 0.2em;
-  color: var(--muted);
-  margin-top: 0.5rem;
-}
-
-.time-sep {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.8rem;
-  color: var(--gold);
-  margin-top: -1.2rem;
-}
-
-/* SECTION 3: Destination & Venue Feature */
-.section-destination {
-  padding: 2.5rem 1.5rem;
-}
-
-.destination-card {
-  position: relative;
-  background: var(--card-bg);
-  border: 1px solid var(--gold-subtle);
-  padding: 2.8rem 1.4rem 2.4rem;
-  text-align: center;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.04);
-}
-
-.hall-illustration-frame {
-  width: 100%;
-  max-width: 290px;
-  margin: 1.2rem auto 1.4rem;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-}
-
-.hall-art {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.venue-calligraphy {
-  font-family: 'Pinyon Script', cursive;
-  font-size: 3.4rem;
-  font-weight: 400;
-  color: var(--charcoal);
-  line-height: 1.15;
-  margin: 0.4rem 0 0.2rem;
-}
-
-.venue-city {
-  font-size: 1rem;
-  color: var(--muted);
-  letter-spacing: 0.05em;
   margin-bottom: 1.8rem;
 }
 
-.cta-directions {
+.map-button {
   display: inline-block;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.62rem;
-  font-weight: 400;
   letter-spacing: 0.25em;
   text-decoration: none;
   color: var(--charcoal);
   border: 1px solid var(--gold);
-  padding: 0.85rem 2rem;
-  transition: all 0.35s ease;
+  padding: 0.8rem 1.8rem;
+  transition: all 0.3s ease;
 }
 
-.cta-directions:hover {
+.map-button:hover {
   background: var(--gold);
   color: #ffffff;
 }
 
-/* Subtle corner filigree */
-.corner-accent {
+/* Corner Accents */
+.corner-filigree {
   position: absolute;
   width: 12px;
   height: 12px;
@@ -337,34 +265,34 @@ body {
 .bottom-right { bottom: 6px; right: 6px; border-bottom: 1px solid var(--gold); border-right: 1px solid var(--gold); }
 
 /* Footer */
-.editorial-footer {
+.footer {
   text-align: center;
-  padding: 2.5rem 1.5rem 4rem;
+  padding: 2.5rem 1rem 3.5rem;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
-.crest-small {
+.crest {
+  display: block;
   color: var(--gold);
-  margin-top: 1rem;
-  font-size: 0.8rem;
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
 }
 
-/* Desktop Polished Shell */
+/* Desktop Polished Viewport */
 @media (min-width: 768px) {
   body {
-    padding: 3.5rem 0;
-    background: radial-gradient(circle at 50% 30%, #f7f3ec 0%, #dfd5c5 100%);
+    padding: 3rem 0;
+    background: radial-gradient(circle at 50% 30%, #f7f3ec 0%, #ded4c3 100%);
   }
 
   .page-container {
-    max-width: 460px;
     border-radius: 16px;
-    box-shadow: 0 25px 80px rgba(44, 41, 39, 0.16), 0 1px 3px rgba(191, 161, 95, 0.3);
+    box-shadow: 0 25px 80px rgba(44, 41, 39, 0.16);
     border: 1px solid rgba(191, 161, 95, 0.4);
   }
 
-  .luxury-nav {
+  .top-header {
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
   }

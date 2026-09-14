@@ -3,111 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prasha & Abhinaba | Wedding Invitation</title>
+  <title>Prasha & Abhinaba | Save The Date</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Montserrat:wght@200;300;400&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Montserrat:wght@200;300;400&family=Pinyon+Script&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/Golden_Morning_Light.mp3" type="audio/mpeg" />
+  </audio>
+
   <main class="page-container">
 
-    <header class="luxury-nav">
-      <span class="nav-caption">SAVE THE DATE</span>
+    <header class="top-header">
+      <button class="music-toggle-btn" id="musicToggle" aria-label="Toggle background music">
+        <span class="music-icon" id="musicIcon">♫</span>
+      </button>
+      <span class="header-tag">SAVE THE DATE</span>
+      <div class="header-spacer"></div>
     </header>
 
-    <section class="curtain-stage">
-      
-      <div class="curtain-rig">
-        <div class="curtain-wing wing-left" id="curtainLeft">
-          <div class="pleat"></div>
-          <div class="pleat"></div>
-          <div class="pleat"></div>
-          <div class="pleat"></div>
+    <section class="card-section">
+      <div class="art-frame">
+        <img src="images/savethedate_without_venue.png" alt="Wedding Invitation" class="card-image" />
+      </div>
+      <p class="quote">"Two lives, one shared journey."</p>
+    </section>
+
+    <section class="timer-section">
+      <p class="section-label">COUNTING DOWN THE DAYS</p>
+      <div class="countdown-grid">
+        <div class="time-box">
+          <span class="time-val" id="days">00</span>
+          <span class="time-lbl">DAYS</span>
         </div>
-        <div class="curtain-wing wing-right" id="curtainRight">
-          <div class="pleat"></div>
-          <div class="pleat"></div>
-          <div class="pleat"></div>
-          <div class="pleat"></div>
+        <span class="time-sep">:</span>
+        <div class="time-box">
+          <span class="time-val" id="hours">00</span>
+          <span class="time-lbl">HOURS</span>
         </div>
-        <div class="scroll-prompt" id="scrollPrompt">
-          <span>SCROLL TO OPEN</span>
+        <span class="time-sep">:</span>
+        <div class="time-box">
+          <span class="time-val" id="minutes">00</span>
+          <span class="time-lbl">MINS</span>
+        </div>
+        <span class="time-sep">:</span>
+        <div class="time-box">
+          <span class="time-val" id="seconds">00</span>
+          <span class="time-lbl">SECS</span>
         </div>
       </div>
+    </section>
 
-      <div class="revealed-invitation">
-        <p class="family-honor">Together with their families</p>
-        
-        <h1 class="couple-title">
-          <span class="name bride">Prasha</span>
-          <span class="ampersand">&</span>
-          <span class="name groom">Abhinaba</span>
-        </h1>
+    <section class="venue-section">
+      <div class="venue-card">
+        <div class="corner-filigree top-left"></div>
+        <div class="corner-filigree top-right"></div>
+        <div class="corner-filigree bottom-left"></div>
+        <div class="corner-filigree bottom-right"></div>
 
+        <p class="section-label">THE DESTINATION</p>
+
+        <div class="hall-frame">
+          <img src="images/dayal_vatika_stylized_0.png" alt="Dayal Vatika" class="hall-image" />
+        </div>
+
+        <h2 class="venue-title">Dayal Vatika</h2>
+        <p class="venue-location">Ratlam, Madhya Pradesh</p>
         <p class="event-dates">JANUARY 25 – 26, 2027</p>
 
-        <div class="artwork-arch">
-          <img src="images/savethedate_without_venue.png" alt="Wedding Invitation Artwork" class="invitation-art" />
-        </div>
-
-        <p class="wedding-quote">"Two lives, one shared journey."</p>
-      </div>
-    </section>
-
-    <section class="section-timer">
-      <p class="eyebrow">COUNTING DOWN THE DAYS</p>
-      <div class="timer-display">
-        <div class="time-cell">
-          <span id="days" class="num">00</span>
-          <span class="lbl">DAYS</span>
-        </div>
-        <div class="time-sep">:</div>
-        <div class="time-cell">
-          <span id="hours" class="num">00</span>
-          <span class="lbl">HOURS</span>
-        </div>
-        <div class="time-sep">:</div>
-        <div class="time-cell">
-          <span id="minutes" class="num">00</span>
-          <span class="lbl">MINS</span>
-        </div>
-        <div class="time-sep">:</div>
-        <div class="time-cell">
-          <span id="seconds" class="num">00</span>
-          <span class="lbl">SECS</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-destination">
-      <div class="destination-card">
-        <div class="corner-accent top-left"></div>
-        <div class="corner-accent top-right"></div>
-        <div class="corner-accent bottom-left"></div>
-        <div class="corner-accent bottom-right"></div>
-
-        <p class="eyebrow">THE DESTINATION</p>
-        
-        <div class="hall-illustration-frame">
-          <img src="images/dayal_vatika_stylized_0.png" alt="Dayal Vatika Hall Architecture" class="hall-art" />
-        </div>
-
-        <h2 class="venue-calligraphy">Dayal Vatika</h2>
-        <p class="venue-city">Ratlam, Madhya Pradesh</p>
-
-        <a href="https://maps.app.goo.gl/bp5XgP6xSAW2FE6p9" target="_blank" rel="noopener noreferrer" class="cta-directions">
-          <span>VIEW LOCATION ON MAP</span>
+        <a href="https://maps.app.goo.gl/bp5XgP6xSAW2FE6p9" target="_blank" rel="noopener noreferrer" class="map-button">
+          VIEW LOCATION ON MAP
         </a>
       </div>
     </section>
 
-    <footer class="editorial-footer">
-      <p class="footer-note">Formal ceremony itinerary will follow shortly.</p>
-      <p class="crest-small">❖</p>
+    <footer class="footer">
+      <p>Celebration details will follow shortly.</p>
+      <span class="crest">❖</span>
     </footer>
 
   </main>
